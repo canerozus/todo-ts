@@ -9,17 +9,16 @@ const App: React.FC = () => {
   const handleAdd = (e: React.FormEvent) => {
     e.preventDefault();
     if (todo) {
-      setTodos([...todos,{id:Date.now(), todo:todo, isDone: false}]);
-      setTodo("")
+      setTodos([...todos, { id: Date.now(), todo: todo, isDone: false }]);
+      setTodo("");
     }
   };
-  console.log(todos)
+  console.log(todos);
   return (
     <div className="App">
       <span className="heading">TO-DO</span>
       <InputFields todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
-      {/* <TodoList /> */}
-      {todos.map(t => (<li>{t.todo}</li>))}
+      <TodoList todos={todos} setTodos={setTodos} />
     </div>
   );
 };

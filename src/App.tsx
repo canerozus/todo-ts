@@ -6,6 +6,7 @@ import TodoList from "./components/TodoList";
 const App: React.FC = () => {
   const [todo, setTodo] = useState<string>("");
   const [todos, setTodos] = useState<Todo[]>([]);
+  
   const handleAdd = (e: React.FormEvent) => {
     e.preventDefault();
     if (todo) {
